@@ -23,6 +23,27 @@ class Users
         $this->pdo->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
     }
 
+    public function createTable(){
+
+        $sql = 'CREATE TABLE user (
+
+  id int(11) NOT NULL AUTO_INCREMENT,
+
+  user_name varchar(255) NOT NULL,
+
+  password varchar(2552) NOT NULL,
+
+  num_actions int(11) NOT NULL,
+
+  PRIMARY KEY (id)
+
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1';
+
+        $db = $this->pdo->prepare($sql);
+        $db->execute();
+
+    }
+
 
     public function newUser()
     {

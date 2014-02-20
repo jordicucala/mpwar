@@ -11,7 +11,7 @@ class UsersTest extends PHPUnit_Framework_TestCase{
      */
     public static function setUpBeforeClass(){
         self::$newUser = new Users();
-
+        self::$newUser->createTable();
     }
 
     public function providerUser(){
